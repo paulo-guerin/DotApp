@@ -59,6 +59,14 @@ jobs:
     #- name: Execute unit tests
     #  run: dotnet test
     
+    - name: setup nuget
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: ${{ matrix.nuget }}
+      
+    - name: install dependencies
+      run: nuget restore $Env:GITHUB_WORKSPACE\DotApp.sln
+      
     - name: Build DotNET
       run: |
            cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
