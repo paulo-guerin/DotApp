@@ -32,7 +32,7 @@ jobs:
     - name: Build DotNET
       run: |
            cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
-           .\MSBuild.exe $Env:GITHUB_WORKSPACE\DotApp.sln /p:OutputPath=DotApp.Web /p:PackageAsSingleFile=true /p:DeployOnBuild=true /p:PublishProfile="PPR.pubxml"  /p:WebPublishMethod=Package
+           .\MSBuild.exe $Env:GITHUB_WORKSPACE\DotApp.sln /p:OutputPath=DotApp.Web /p:PackageAsSingleFile=true
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
